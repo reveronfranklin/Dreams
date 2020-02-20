@@ -11,12 +11,15 @@ namespace Dreams.Web.Data.Entities
 
         public int Id { get; set; }
 
-        [StringLength(100, MinimumLength = 10, ErrorMessage = "The {0} field must have {1} characters.")]
+        [StringLength(20,  ErrorMessage = "The {0} field must have {1} characters.")]
+        [Required(ErrorMessage = "The field {0} is mandatory.")]
+        public string Code { get; set; }
+
+        [StringLength(100,  ErrorMessage = "The {0} field must have {1} characters.")]
         [Required(ErrorMessage = "The field {0} is mandatory.")]
         public string Descripcion { get; set; }
 
-        public decimal Cost { get; set; }
-
+        
         [DataType(DataType.DateTime)]
         [Display(Name = "Create Date")]
         [DisplayFormat(DataFormatString = "{0:yyyy/MM/dd hh:mm}", ApplyFormatInEditMode = false)]

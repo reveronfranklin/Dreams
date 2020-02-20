@@ -20,6 +20,8 @@ namespace Dreams.Web.Data
 
         public DbSet<IngredientEntity> Ingredients { get; set; }
 
+        public DbSet<UnitEntity> Units { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
@@ -27,6 +29,15 @@ namespace Dreams.Web.Data
             modelBuilder.Entity<ProductEntity>()
                 .HasIndex(t => t.Code)
                 .IsUnique();
+
+            modelBuilder.Entity<IngredientEntity>()
+                .HasIndex(t => t.Code)
+                .IsUnique();
+
+            modelBuilder.Entity<UnitEntity>()
+               .HasIndex(t => t.Code)
+               .IsUnique();
+
 
         }
 
