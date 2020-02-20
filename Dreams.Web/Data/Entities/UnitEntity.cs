@@ -6,23 +6,16 @@ using System.Threading.Tasks;
 
 namespace Dreams.Web.Data.Entities
 {
-    public class RecipeEntity
+    public class UnitEntity
     {
+
         public int Id { get; set; }
 
         [StringLength(100, MinimumLength = 10, ErrorMessage = "The {0} field must have {1} characters.")]
         [Required(ErrorMessage = "The field {0} is mandatory.")]
         public string Descripcion { get; set; }
 
-
-        public decimal Quantity { get; set; }
-
-        public decimal TotalCost { get; set; }
-
-
-        public string formula { get; set; }
-
-
+        public decimal Cost { get; set; }
 
         [DataType(DataType.DateTime)]
         [Display(Name = "Create Date")]
@@ -38,9 +31,6 @@ namespace Dreams.Web.Data.Entities
 
         public DateTime UpdateDateLocal => UpdateDate.ToLocalTime();
 
-        public ProductEntity Product { get; set; }
-
-        public IngredientEntity Ingredient { get; set; }
 
     }
 }

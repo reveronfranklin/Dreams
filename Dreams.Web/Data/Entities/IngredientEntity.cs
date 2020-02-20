@@ -15,7 +15,7 @@ namespace Dreams.Web.Data.Entities
         [Required(ErrorMessage = "The field {0} is mandatory.")]
         public string Descripcion { get; set; }
 
-
+        public decimal Cost { get; set; }
 
         [DataType(DataType.DateTime)]
         [Display(Name = "Create Date")]
@@ -31,7 +31,7 @@ namespace Dreams.Web.Data.Entities
 
         public DateTime UpdateDateLocal => UpdateDate.ToLocalTime();
 
-
+        public UnitEntity Unit { get; set; }
 
     }
 }
